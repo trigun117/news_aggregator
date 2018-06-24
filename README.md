@@ -4,6 +4,7 @@
 
 News Aggregator 
 
+![site screenshot](https://github.com/trigun117/news_aggregator/blob/master/image.JPG)
 ![site screenshot](https://github.com/trigun117/news_aggregator/blob/master/image1.JPG)
 
 On http://ua-news.ml you can find live example
