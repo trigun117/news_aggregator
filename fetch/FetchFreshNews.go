@@ -38,15 +38,9 @@ var NewsArticles News
 
 // FreshNews fetching news from api
 func FreshNews() error {
-	resonse, err := http.Get(link)
-	if err != nil {
-		panic(err)
-	}
+	resonse, _ := http.Get(link)
+	body, _ := ioutil.ReadAll(resonse.Body)
 	defer resonse.Body.Close()
-	body, err := ioutil.ReadAll(resonse.Body)
-	if err != nil {
-		panic(err)
-	}
 	json.Unmarshal(body, &NewsArticles)
 	return nil
 }
