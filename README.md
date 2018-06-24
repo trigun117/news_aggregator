@@ -14,7 +14,7 @@ For start, build docker image from Dockerfile and run with this command
 ```
 docker run -d \
 -p 80:80 \
--e LINK=link_to_news_api
+-e LINK=link_to_news_api \
 -e EF=email_from \
 -e EFL=email_from_login \
 -e EFP=email_from_password \
