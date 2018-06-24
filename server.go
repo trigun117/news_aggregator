@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/trigun117/news/fetch"
+	"github.com/trigun117/news_aggregator/fetch"
 	"html/template"
 	"net/http"
 	"net/smtp"
