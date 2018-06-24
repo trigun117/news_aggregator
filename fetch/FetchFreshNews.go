@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-var url = os.Getenv("URL")
+var link = os.Getenv("LINK")
 
 // Sources struct contains information about article source
 type Sources struct {
@@ -38,7 +38,7 @@ var NewsArticles News
 
 // FreshNews fetching news from api
 func FreshNews() error {
-	resonse, err := http.Get(url)
+	resonse, err := http.Get(link)
 	if err != nil {
 		panic(err)
 	}
