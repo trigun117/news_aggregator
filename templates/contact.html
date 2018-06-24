@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <title>Зв'язок</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        function check(ck) {
+            if (ck.checked) {
+                document.body.style.backgroundColor = 'black';
+                document.getElementById('submbutton').setAttribute("class", "btn btn-outline-light")
+            } else {
+                document.body.style.backgroundColor = 'white';
+                document.getElementById('submbutton').setAttribute("class", "btn btn-outline-dark")
+            }
+        }
+    </script>
+    <style>
+        body {
+            transition: .6s;
+        }
+
+        .form-control,
+        .btn {
+            margin-top: 1.5%;
+            transition: .6s;
+        }
+
+        .row {
+            margin: 15%;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            background-color: black;
+            transition: .6s;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .slider::before {
+            position: absolute;
+            content: "";
+            background-color: cyan;
+            transition: .6s;
+            height: 25px;
+            width: 25px;
+            top: 2px;
+            left: 5px;
+            bottom: 5px;
+        }
+
+        input:checked+.slider {
+            background-color: white;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 35px;
+        }
+
+        .slider.round::before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Новини України</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Головна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Зв'язок</a>
+                </li>
+                <li class="nav-item">
+                    <label class="switch">
+                        <input type="checkbox" onclick="check(this);">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+            <form action="/contact" method="post">
+                <input class="form-control" type="text" name="name" placeholder="Ім'я" required>
+                <input class="form-control" type="email" name="email" placeholder="Електронна пошта" required>
+                <input class="form-control" type="text" name="message" placeholder="Повідомлення" required>
+                <input class="btn btn-outline-dark" type="submit" value="Відправити" id="submbutton">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
